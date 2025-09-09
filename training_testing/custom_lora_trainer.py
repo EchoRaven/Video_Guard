@@ -68,11 +68,11 @@ class DataArguments:
         metadata={"help": "Path to the dataset directory"}
     )
     max_samples: List[int] = field(
-        default_factory=lambda: [1000, 1000],  # [shot2story, safewatch]
+        default_factory=lambda: [20000, 20000],  # [shot2story, safewatch] - 限制为20000个样本
         metadata={"help": "Maximum number of samples to load from each dataset"}
     )
     max_length: int = field(
-        default=16384,  # 减少到16K以适应LoRA训练
+        default=8192,  # 减少到8K以适应更大的batch size
         metadata={"help": "Maximum sequence length for tokenization"}
     )
     input_size: int = field(

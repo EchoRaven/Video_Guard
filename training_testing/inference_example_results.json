@@ -1,0 +1,62 @@
+{
+  "video_path": "/scratch/czr/Video-Guard/datasets/shot2story-videos/release_134k_videos/--5gVbAaF_A.9.mp4",
+  "total_frames_processed": 5,
+  "shots": [
+    {
+      "frame_indices": [
+        0
+      ],
+      "frame_labels": [
+        [
+          "<unsafe:C6>"
+        ]
+      ],
+      "summary": "At-1- This video shows- It- shows- It- features a person"
+    },
+    {
+      "frame_indices": [
+        90
+      ],
+      "frame_labels": [
+        [
+          "<unsafe:C5>"
+        ]
+      ],
+      "summary": "A man is sitting in front of a table and mixing the"
+    },
+    {
+      "frame_indices": [
+        180
+      ],
+      "frame_labels": [
+        [
+          "<unsafe:C4>"
+        ]
+      ],
+      "summary": "This video clip contains content that may belongs to"
+    },
+    {
+      "frame_indices": [
+        270
+      ],
+      "frame_labels": [
+        [
+          "<unsafe:C6>"
+        ]
+      ],
+      "summary": "This video clip contains content that may harmful to"
+    },
+    {
+      "frame_indices": [
+        360
+      ],
+      "frame_labels": [
+        [
+          "<safe>"
+        ]
+      ],
+      "summary": "Incomplete shot (video ended)"
+    }
+  ],
+  "final_summary": "<summary> A man is sitting in front of a table and mixing the"
+}

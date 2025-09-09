@@ -1,0 +1,54 @@
+{
+  "video_path": "/scratch/czr/Video-Guard/datasets/shot2story-videos/release_134k_videos/--5gVbAaF_A.9.mp4",
+  "total_frames_processed": 10,
+  "shots": [
+    {
+      "frame_indices": [
+        0,
+        30,
+        60,
+        90,
+        120,
+        150,
+        180,
+        210,
+        240,
+        270
+      ],
+      "frame_labels": [
+        [
+          "<safe>"
+        ],
+        [
+          "<safe>"
+        ],
+        [
+          "<safe>"
+        ],
+        [
+          "<safe>"
+        ],
+        [
+          "<unsafe:C5>"
+        ],
+        [
+          "<unsafe:C5>"
+        ],
+        [
+          "<unsafe:C5>"
+        ],
+        [
+          "<unsafe:C5>"
+        ],
+        [
+          "<unsafe:C5>"
+        ],
+        [
+          "<unsafe:C5>"
+        ]
+      ],
+      "summary": "Incomplete shot (video ended)"
+    }
+  ],
+  "final_summary": ".<|im_end|>"
+}

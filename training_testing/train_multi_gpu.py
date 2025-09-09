@@ -10,7 +10,7 @@ class DataCollatorForStreaming:
     Data collator for streaming video data with dynamic image token replacement.
     """
     
-    def __init__(self, tokenizer: PreTrainedTokenizer, max_length: int = 16384):
+    def __init__(self, tokenizer: PreTrainedTokenizer, max_length: int = 8192):
         self.tokenizer = tokenizer
         self.max_length = max_length
         

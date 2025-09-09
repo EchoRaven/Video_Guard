@@ -1,0 +1,81 @@
+{
+  "video_path": "/scratch/czr/Video-Guard/datasets/shot2story-videos/release_134k_videos/--5gVbAaF_A.9.mp4",
+  "total_frames_processed": 10,
+  "shots": [
+    {
+      "frame_indices": [
+        0
+      ],
+      "frame_labels": [
+        []
+      ],
+      "summary": "<image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <"
+    },
+    {
+      "frame_indices": [
+        30
+      ],
+      "frame_labels": [
+        []
+      ],
+      "summary": "<image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <"
+    },
+    {
+      "frame_indices": [
+        60
+      ],
+      "frame_labels": [
+        []
+      ],
+      "summary": "<image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <image> <"
+    },
+    {
+      "frame_indices": [
+        90,
+        120,
+        150
+      ],
+      "frame_labels": [
+        [
+          "safe"
+        ],
+        [
+          "safe"
+        ],
+        []
+      ],
+      "summary": "The scene then continues to show the woman putting on a necklace. She is standing next to a brown table."
+    },
+    {
+      "frame_indices": [
+        180,
+        210,
+        240
+      ],
+      "frame_labels": [
+        [
+          "C6"
+        ],
+        [
+          "C6"
+        ],
+        [
+          "C6"
+        ]
+      ],
+      "summary": ": This video shows a man playing"
+    },
+    {
+      "frame_indices": [
+        270
+      ],
+      "frame_labels": [
+        [
+          "safe"
+        ]
+      ],
+      "summary": "Incomplete shot"
+    }
+  ],
+  "final_summary": "The video begins with a close-up shot of a man's face, who wearing a black t-shirt and a necklace, looking directly at the camera. The scene then transitions to a woman in a gray top and a black skirt, standing next to a brown table. She is putting on a necklace and holding a phone in her hand. The video then shifts to a man playing a video game with a girl in the background. The camera then focuses on the man who is looking at the camera"
+}

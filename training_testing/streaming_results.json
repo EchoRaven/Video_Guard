@@ -1,0 +1,34 @@
+{
+  "video_path": "/scratch/czr/Video-Guard/datasets/shot2story-videos/release_134k_videos/--5gVbAaF_A.9.mp4",
+  "total_frames_processed": 5,
+  "shots": [
+    {
+      "frame_indices": [
+        0,
+        30,
+        60,
+        90,
+        120
+      ],
+      "frame_labels": [
+        [
+          "safe"
+        ],
+        [
+          "safe"
+        ],
+        [
+          "safe"
+        ],
+        [
+          "safe"
+        ],
+        [
+          "safe"
+        ]
+      ],
+      "summary": "Incomplete shot"
+    }
+  ],
+  "final_summary": "The video begins with a man running across a grassy field, with the camera following him as he runs. He is dressed in a dark-colored shirt and shorts, and he appears to be in good physical shape. The camera then switches to a close-up of the man's face, who he is seen smiling and looking directly at the camera. He has a muscular build and a serious expression on his face. He speaks to the camera, introducing himself as a \"bodybuilder from Germany\". The camera"
+}
