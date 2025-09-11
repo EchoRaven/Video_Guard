@@ -8,11 +8,13 @@ from .configuration_internvl_streaming import InternVLStreamingConfig
 from .modeling_internvl_chat import InternVLChatModel
 from .configuration_internvl_chat import InternVLChatConfig
 from .conversation import get_conv_template
+from .streaming_inference import StreamingModel
 
 __all__ = [
     'InternVLStreamingModel',
     'InternVLStreamingConfig', 
     'InternVLChatModel',
     'InternVLChatConfig',
-    'get_conv_template'
+    'get_conv_template',
+    'StreamingModel'
 ]
