@@ -1,0 +1,293 @@
+{
+  "video_path": "/scratch/czr/Video-Guard/datasets/shot2story-videos/release_134k_videos/--5gVbAaF_A.9.mp4",
+  "model_checkpoint": "/scratch/czr/Video-Guard/training_testing/output_8gpu_full/checkpoint-3500",
+  "analysis_metadata": {
+    "total_frames_loaded": 12,
+    "total_frames_processed": 12,
+    "fps_sample": 30,
+    "input_size": 448,
+    "max_patches_per_frame": 6,
+    "total_clips_before_merge": 6,
+    "total_clips_after_merge": 6,
+    "vision_end_token_used": true,
+    "final_prompt_length": 2446,
+    "final_response_token_count": 188
+  },
+  "clips": [
+    {
+      "clip_idx": 1,
+      "clip_number": 1,
+      "frames": [
+        0,
+        1
+      ],
+      "num_frames": 2,
+      "frame_results": [
+        {
+          "frame_idx": 0,
+          "frame_number": 1,
+          "video_frame_index": 0,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "raw_response": "<label><safe><continue></label>\n",
+          "has_continue": true,
+          "has_summary": false,
+          "response_length": 32,
+          "num_patches": 3
+        },
+        {
+          "frame_idx": 1,
+          "frame_number": 2,
+          "video_frame_index": 30,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end. The woman is wearing black nail polish and has a ring on her finger.",
+          "raw_response": "<label><safe></label><summary>A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end. The woman is wearing black nail polish and has a ring on her finger.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 210,
+          "num_patches": 3
+        }
+      ],
+      "clip_summary": "A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end. The woman is wearing black nail polish and has a ring on her finger.",
+      "clip_ended_with_summary": true,
+      "total_response_tokens": 242,
+      "clip_prompt_length": 791
+    },
+    {
+      "clip_idx": 2,
+      "clip_number": 2,
+      "frames": [
+        2,
+        3
+      ],
+      "num_frames": 1,
+      "frame_results": [
+        {
+          "frame_idx": 2,
+          "frame_number": 3,
+          "video_frame_index": 60,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.",
+          "raw_response": "<label><safe></label><summary>A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 147,
+          "num_patches": 3
+        },
+        {
+          "frame_idx": 3,
+          "frame_number": 4,
+          "video_frame_index": 90,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.",
+          "raw_response": "<label><safe></label><summary>A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 147,
+          "num_patches": 3
+        }
+      ],
+      "clip_summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.",
+      "clip_ended_with_summary": true,
+      "total_response_tokens": 147,
+      "clip_prompt_length": 688
+    },
+    {
+      "clip_idx": 4,
+      "clip_number": 4,
+      "frames": [
+        4,
+        5
+      ],
+      "num_frames": 2,
+      "frame_results": [
+        {
+          "frame_idx": 4,
+          "frame_number": 5,
+          "video_frame_index": 120,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "raw_response": "<label><safe><continue></label>\n",
+          "has_continue": true,
+          "has_summary": false,
+          "response_length": 32,
+          "num_patches": 3
+        },
+        {
+          "frame_idx": 5,
+          "frame_number": 6,
+          "video_frame_index": 150,
+          "labels": [
+            "safe"
+          ],
+          "summary": "There are two women in the video. One is sitting on a chair, and the other is standing in front of her. The woman standing is holding a makeup brush and talking to the woman sitting. The woman sitting is wearing a white dress, and the woman standing is wearing a black dress. The background is a city street with buildings and trees. The text \"LASH ACT\" and \"Build & Define Mascara\" appear on the screen.",
+          "raw_response": "<label><safe></label><summary>There are two women in the video. One is sitting on a chair, and the other is standing in front of her. The woman standing is holding a makeup brush and talking to the woman sitting. The woman sitting is wearing a white dress, and the woman standing is wearing a black dress. The background is a city street with buildings and trees. The text \"LASH ACT\" and \"Build & Define Mascara\" appear on the screen.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 445,
+          "num_patches": 3
+        }
+      ],
+      "clip_summary": "There are two women in the video. One is sitting on a chair, and the other is standing in front of her. The woman standing is holding a makeup brush and talking to the woman sitting. The woman sitting is wearing a white dress, and the woman standing is wearing a black dress. The background is a city street with buildings and trees. The text \"LASH ACT\" and \"Build & Define Mascara\" appear on the screen.",
+      "clip_ended_with_summary": true,
+      "total_response_tokens": 477,
+      "clip_prompt_length": 1026
+    },
+    {
+      "clip_idx": 5,
+      "clip_number": 5,
+      "frames": [
+        6,
+        7
+      ],
+      "num_frames": 2,
+      "frame_results": [
+        {
+          "frame_idx": 6,
+          "frame_number": 7,
+          "video_frame_index": 180,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "raw_response": "<label><safe><continue></label>\n",
+          "has_continue": true,
+          "has_summary": false,
+          "response_length": 32,
+          "num_patches": 3
+        },
+        {
+          "frame_idx": 7,
+          "frame_number": 8,
+          "video_frame_index": 210,
+          "labels": [
+            "safe"
+          ],
+          "summary": "The video shows a woman in a white dress sitting on a chair, and a woman in black clothes standing in front of her, applying makeup to her face.",
+          "raw_response": "<label><safe></label><summary>The video shows a woman in a white dress sitting on a chair, and a woman in black clothes standing in front of her, applying makeup to her face.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 185,
+          "num_patches": 3
+        }
+      ],
+      "clip_summary": "The video shows a woman in a white dress sitting on a chair, and a woman in black clothes standing in front of her, applying makeup to her face.",
+      "clip_ended_with_summary": true,
+      "total_response_tokens": 217,
+      "clip_prompt_length": 766
+    },
+    {
+      "clip_idx": 6,
+      "clip_number": 6,
+      "frames": [
+        8,
+        9
+      ],
+      "num_frames": 2,
+      "frame_results": [
+        {
+          "frame_idx": 8,
+          "frame_number": 9,
+          "video_frame_index": 240,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "raw_response": "<label><safe><continue></label>\n",
+          "has_continue": true,
+          "has_summary": false,
+          "response_length": 32,
+          "num_patches": 3
+        },
+        {
+          "frame_idx": 9,
+          "frame_number": 10,
+          "video_frame_index": 270,
+          "labels": [
+            "safe"
+          ],
+          "summary": "The video shows a close-up of a person holding a black pen in one hand and a black object in the other. The person is wearing a ring on one hand and has black nail polish on the other hand. The background is blurred.",
+          "raw_response": "<label><safe></label><summary>The video shows a close-up of a person holding a black pen in one hand and a black object in the other. The person is wearing a ring on one hand and has black nail polish on the other hand. The background is blurred.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 257,
+          "num_patches": 3
+        }
+      ],
+      "clip_summary": "The video shows a close-up of a person holding a black pen in one hand and a black object in the other. The person is wearing a ring on one hand and has black nail polish on the other hand. The background is blurred.",
+      "clip_ended_with_summary": true,
+      "total_response_tokens": 289,
+      "clip_prompt_length": 838
+    },
+    {
+      "clip_idx": 7,
+      "clip_number": 7,
+      "frames": [
+        10,
+        11
+      ],
+      "num_frames": 2,
+      "frame_results": [
+        {
+          "frame_idx": 10,
+          "frame_number": 11,
+          "video_frame_index": 300,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "raw_response": "<label><safe><continue></label>\n",
+          "has_continue": true,
+          "has_summary": false,
+          "response_length": 32,
+          "num_patches": 3
+        },
+        {
+          "frame_idx": 11,
+          "frame_number": 12,
+          "video_frame_index": 330,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman in a gray vest is sitting on a balcony, applying lipstick to her lips. Another woman in a black top is holding a lipstick and a mirror in her hand. The background is a cityscape with buildings and trees.",
+          "raw_response": "<label><safe></label><summary>A woman in a gray vest is sitting on a balcony, applying lipstick to her lips. Another woman in a black top is holding a lipstick and a mirror in her hand. The background is a cityscape with buildings and trees.</summary>\n",
+          "has_continue": false,
+          "has_summary": true,
+          "response_length": 252,
+          "num_patches": 3
+        }
+      ],
+      "clip_summary": "A woman in a gray vest is sitting on a balcony, applying lipstick to her lips. Another woman in a black top is holding a lipstick and a mirror in her hand. The background is a cityscape with buildings and trees.",
+      "clip_ended_with_summary": true,
+      "total_response_tokens": 284,
+      "clip_prompt_length": 833
+    }
+  ],
+  "clip_merging": {
+    "clips_merged": false,
+    "merge_reason": "no_merge_needed"
+  },
+  "final_response": {
+    "content": "The video begins with a woman holding a black mascara tube with a brush on the end, wearing black nail polish and a ring on her finger. She is then seen applying makeup to another woman with her hair tied up, both wearing black clothes and glasses. The scene transitions to a city street with buildings and trees in the background, where a woman in a white dress is sitting on a chair, and another woman in a black dress is standing in front of her, holding a makeup brush and talking. The text \"LASH ACT\" and \"Build & Define Mascara\" appear on the screen. The video then shows a close-up of a person holding a black pen in one hand and a black object in the other, wearing a ring and having black nail polish on their hand. The background is blurred. Finally, the video ends with a woman in a gray vest sitting on a balcony, applying lipstick to her lips, while another woman in a black top holds a lipstick and a mirror in her hand. The background features a cityscape with buildings and trees.",
+    "raw_response": "<response>The video begins with a woman holding a black mascara tube with a brush on the end, wearing black nail polish and a ring on her finger. She is then seen applying makeup to another woman with her hair tied up, both wearing black clothes and glasses. The scene transitions to a city street with buildings and trees in the background, where a woman in a white dress is sitting on a chair, and another woman in a black dress is standing in front of her, holding a makeup brush and talking. The text \"LASH ACT\" and \"Build & Define Mascara\" appear on the screen. The video then shows a close-up of a person holding a black pen in one hand and a black object in the other, wearing a ring and having black nail polish on their hand. The background is blurred. Finally, the video ends with a woman in a gray vest sitting on a balcony, applying lipstick to her lips, while another woman in a black top holds a lipstick and a mirror in her hand. The background features a cityscape with buildings and trees.</response>",
+    "response_length": 996,
+    "has_response_tags": true
+  },
+  "safety_analysis": {
+    "total_unsafe_frames": 0,
+    "total_safe_frames": 12,
+    "unsafe_categories_detected": []
+  },
+  "timestamp": "2025-09-09T15:19:22.367653",
+  "processing_time_estimate": "Not tracked"
+}

@@ -1,0 +1,68 @@
+{
+  "unsafe:C1": {
+    "True_Positive": 0,
+    "True_Negative": 1,
+    "False_Positive": 2,
+    "False_Negative": 0,
+    "Precision": "0.000",
+    "Recall": "0.000",
+    "F1_Score": "0.000",
+    "Accuracy": "0.333",
+    "Total_Videos": 3
+  },
+  "unsafe:C2": {
+    "True_Positive": 0,
+    "True_Negative": 3,
+    "False_Positive": 0,
+    "False_Negative": 0,
+    "Precision": "0.000",
+    "Recall": "0.000",
+    "F1_Score": "0.000",
+    "Accuracy": "1.000",
+    "Total_Videos": 3
+  },
+  "unsafe:C3": {
+    "True_Positive": 0,
+    "True_Negative": 3,
+    "False_Positive": 0,
+    "False_Negative": 0,
+    "Precision": "0.000",
+    "Recall": "0.000",
+    "F1_Score": "0.000",
+    "Accuracy": "1.000",
+    "Total_Videos": 3
+  },
+  "unsafe:C4": {
+    "True_Positive": 0,
+    "True_Negative": 3,
+    "False_Positive": 0,
+    "False_Negative": 0,
+    "Precision": "0.000",
+    "Recall": "0.000",
+    "F1_Score": "0.000",
+    "Accuracy": "1.000",
+    "Total_Videos": 3
+  },
+  "unsafe:C5": {
+    "True_Positive": 0,
+    "True_Negative": 3,
+    "False_Positive": 0,
+    "False_Negative": 0,
+    "Precision": "0.000",
+    "Recall": "0.000",
+    "F1_Score": "0.000",
+    "Accuracy": "1.000",
+    "Total_Videos": 3
+  },
+  "unsafe:C6": {
+    "True_Positive": 1,
+    "True_Negative": 1,
+    "False_Positive": 1,
+    "False_Negative": 0,
+    "Precision": "0.500",
+    "Recall": "1.000",
+    "F1_Score": "0.667",
+    "Accuracy": "0.667",
+    "Total_Videos": 3
+  }
+}

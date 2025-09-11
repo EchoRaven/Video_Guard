@@ -248,16 +248,8 @@ def construct_final_response_prompt(final_response_info: dict) -> str:
     # Insert video end label
     user_prompt += '<|vision_end|>'
     
-    # Update final response format to use closing tag
-    if final_response.startswith('<response>'):
-        # Replace <response> with <response>...</response> format
-        final_response = final_response.replace('<response>', '<response>', 1)
-        if not final_response.endswith('</response>'):
-            final_response += '</response>'
-    else:
-        # Wrap in response tags if not already present
-        final_response = f'<response>{final_response}</response>'
-    
+    # Since we now ensure both datasets have proper format, just add the response
+    # The response should already have <response>...</response> tags
     user_prompt += final_response
     return user_prompt
 
@@ -267,10 +259,10 @@ class StreamingDataset(Dataset):
     def __init__(self, 
                  dataset_file: str = '/scratch/czr/Video-Guard/datasets',
                  tokenizer = None,
-                 max_samples: list[int] = [20000, 20000],  # [shot2story, safewatch] - 限制为20000个样本
+                 max_samples: list[int] = [5000, 20000],  # [shot2story, safewatch] - Shot2Story限制为5000个样本
                  max_length: int = 8192,  # 减少到8K以适应更大的batch size
                  input_size: int = 448,
-                 max_num_patches: int = 6,  # 调整为6，避免token数量过多
+                 max_num_patches: int = 4,  # 减少到4以适应token限制 (4 patches = 1024 tokens/frame)
                  shuffle: bool = True,  # 是否打乱samples
                  random_seed: int = 42,  # 随机种子，用于复现
                  **kwargs):
@@ -342,6 +334,12 @@ For the last frame, use <summary>...</summary> to provide a complete shot descri
             clips = data['video_names']
             clips_summaries = data['captions']
             
+            # CRITICAL: First check if the main video file exists
+            main_video_path = os.path.join(self.dataset_file, 'shot2story-videos/release_134k_videos', full_video)
+            if not os.path.exists(main_video_path):
+                logger.debug(f"❌ Shot2Story main video not found, skipping: {main_video_path}")
+                continue
+            
             # Quality filtering: skip videos without good summaries
             if (not final_response or len(final_response.strip()) < 50 or
                 not clips_summaries or len(clips_summaries) == 0):
@@ -365,7 +363,26 @@ For the last frame, use <summary>...</summary> to provide a complete shot descri
             clips_summaries = valid_summaries
             valid_shot2story_count += 1
             
-            final_response_info = {'user_prompt': shot_2_story_user_prompt, 'clip_prompts': [], 'final_response': f'<response>{final_response}'}
+            # For Shot2Story, all videos are safe - use same DESCRIPTION/GUARDRAIL format
+            # All guardrail categories are False (safe content)
+            safe_guardrail = {
+                "C1(Sexual Content)": False,
+                "C2(Harassment & Bullying)": False,
+                "C3(Threats, Violence & Harm)": False,
+                "C4(False & Deceptive Information)": False,
+                "C5(Illegal/Regulated Activities)": False,
+                "C6(Hateful Content & Extremism)": False
+            }
+            guardrail_str = json.dumps(safe_guardrail, indent=4).replace('\n', '\\n')
+            combined_response = f"DESCRIPTION: {final_response}\\nGUARDRAIL: {guardrail_str}"
+            
+            # Ensure proper response format with closing tag
+            if not combined_response.startswith('<response>'):
+                combined_response = f'<response>{combined_response}'
+            if not combined_response.endswith('</response>'):
+                combined_response += '</response>'
+            
+            final_response_info = {'user_prompt': shot_2_story_user_prompt, 'clip_prompts': [], 'final_response': combined_response}
             # gather frame num for each clip
             for i, video_name in enumerate(clips):
                 # "W26nTWGbf3g.8_0_66.mp4" # start from 0 to 66
@@ -378,6 +395,13 @@ For the last frame, use <summary>...</summary> to provide a complete shot descri
                         
                         # get video info
                         video_path = os.path.join(self.dataset_file, 'shot2story-videos/release_134k_videos', full_video)
+                        
+                        # CRITICAL: Check if video exists - skip if missing
+                        if not os.path.exists(video_path):
+                            logger.debug(f"❌ Shot2Story video not found: {video_path}")
+                            # Skip this clip but continue with other clips
+                            continue
+                        
                         fps, total_frames = self.get_video_info(video_path)
                         
                         # calculate clip duration
@@ -459,7 +483,7 @@ Watch each frame and respond with labels in <label>...</label> tags:
 For the last frame, use <summary>...</summary> to provide a complete shot description"""
         
         safewatch_samples = []
-        safewatch_jsonl_path = os.path.join(self.dataset_file, 'safewatch_streaming_corrected.jsonl')
+        safewatch_jsonl_path = os.path.join(self.dataset_file, 'safewatch_streaming_fixed_v2.jsonl')
         
         if os.path.exists(safewatch_jsonl_path):
             logger.info(f"📦 处理SafeWatch数据 (最多 {self.max_samples[1]:,} 个视频)")
@@ -482,13 +506,31 @@ For the last frame, use <summary>...</summary> to provide a complete shot descri
                     clip_annotations = data['clip_video_annotations']
                     full_annotation = data['full_video_annotation']
                     
+                    # CRITICAL: Check if full video exists - skip entire entry if missing
+                    if not os.path.exists(full_video_path):
+                        logger.debug(f"❌ Full video not found, skipping entire entry: {full_video_path}")
+                        continue
+                    
                     # Quality filtering: check final response quality
                     final_description = full_annotation.get('description', '')
                     if (not final_description or len(final_description.strip()) < 20 or
                         final_description.strip().lower() in ['video analyzed for safety.', 'no description', 'n/a']):
                         continue
                     
-                    # Filter clips with valid annotations - STRICT: must have good descriptions
+                    # CRITICAL: First check if ALL clip videos exist before processing
+                    all_clips_exist = True
+                    for clip_path in clip_video_paths:
+                        if not os.path.exists(clip_path):
+                            logger.debug(f"❌ Clip file not found: {clip_path}")
+                            all_clips_exist = False
+                            break
+                    
+                    # Skip entire entry if ANY clip is missing
+                    if not all_clips_exist:
+                        logger.debug(f"❌ Skipping entire video due to missing clips: {full_video_path}")
+                        continue
+                    
+                    # Now filter clips with valid annotations - STRICT: must have good descriptions
                     valid_clip_paths = []
                     valid_clip_labels = []
                     valid_clip_annotations = []
@@ -498,16 +540,17 @@ For the last frame, use <summary>...</summary> to provide a complete shot descri
                         # Check if clip has meaningful description
                         clip_desc = clip_annotation.get('description', '') if isinstance(clip_annotation, dict) else ''
                         
-                        # STRICT: Require good description (no fallback)
-                        if os.path.exists(clip_path) and clip_desc and len(clip_desc.strip()) >= 20:
+                        # We already verified file exists above, now just check description
+                        if clip_desc and len(clip_desc.strip()) >= 20:
                             valid_clip_paths.append(clip_path)
                             valid_clip_labels.append(clip_labels)
                             valid_clip_annotations.append(clip_annotation)
                         else:
                             # Mark that this video has missing clip descriptions
+                            logger.debug(f"❌ Clip has insufficient description: {clip_path}")
                             has_missing_descriptions = True
                     
-                    # Skip videos if ANY clip is missing descriptions or if no valid clips
+                    # Skip videos if ANY clip has missing descriptions or if no valid clips
                     if has_missing_descriptions or len(valid_clip_paths) == 0:
                         continue
                     
@@ -522,11 +565,24 @@ For the last frame, use <summary>...</summary> to provide a complete shot descri
                     clip_annotations = valid_clip_annotations
                     valid_safewatch_count += 1
                     
-                    # Process final response
+                    # Process final response - use DESCRIPTION and GUARDRAIL format from SafeWatch
+                    # Get guardrail info
+                    guardrail = full_annotation.get('guardrail', {})
+                    
+                    # Build response in DESCRIPTION/GUARDRAIL format (matching full.json format)
+                    guardrail_str = json.dumps(guardrail, indent=4).replace('\n', '\\n')  # Format as single-line JSON string
+                    combined_response = f"DESCRIPTION: {final_description}\\nGUARDRAIL: {guardrail_str}"
+                    
+                    # Ensure proper format with closing tag
+                    if not combined_response.startswith('<response>'):
+                        combined_response = f'<response>{combined_response}'
+                    if not combined_response.endswith('</response>'):
+                        combined_response += '</response>'
+                    
                     final_response_info = {
                         'user_prompt': safewatch_user_prompt,
                         'clip_prompts': [],
-                        'final_response': f"<response>{final_description}"
+                        'final_response': combined_response
                     }
                     
                     # Process each clip

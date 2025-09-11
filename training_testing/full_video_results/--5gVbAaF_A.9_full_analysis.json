@@ -1,0 +1,168 @@
+{
+  "total_frames": 12,
+  "total_clips": 5,
+  "clips": [
+    {
+      "clip_idx": 1,
+      "frames": [
+        0,
+        1
+      ],
+      "frame_results": [
+        {
+          "frame_idx": 0,
+          "frame_number": 1,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe><continue></label>\n"
+        },
+        {
+          "frame_idx": 1,
+          "frame_number": 2,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end. The woman is wearing black nail polish and has a ring on her finger.",
+          "response": "<label><safe></label><summary>A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end. The woman is wearing black nail polish and has a ring on her finger.</summary>\n"
+        }
+      ],
+      "clip_summary": "A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end. The woman is wearing black nail polish and has a ring on her finger."
+    },
+    {
+      "clip_idx": 2,
+      "frames": [
+        2
+      ],
+      "frame_results": [
+        {
+          "frame_idx": 2,
+          "frame_number": 3,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.",
+          "response": "<label><safe></label><summary>A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.</summary>\n"
+        }
+      ],
+      "clip_summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up."
+    },
+    {
+      "clip_idx": 3,
+      "frames": [
+        3
+      ],
+      "frame_results": [
+        {
+          "frame_idx": 3,
+          "frame_number": 4,
+          "labels": [
+            "safe"
+          ],
+          "summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.",
+          "response": "<label><safe></label><summary>A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up.</summary>\n"
+        }
+      ],
+      "clip_summary": "A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair tied up."
+    },
+    {
+      "clip_idx": 4,
+      "frames": [
+        4,
+        5,
+        6
+      ],
+      "frame_results": [
+        {
+          "frame_idx": 4,
+          "frame_number": 5,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe><continue></label>\n"
+        },
+        {
+          "frame_idx": 5,
+          "frame_number": 6,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe></label><summary>There are two women in the video. One is sitting on a chair, and the other is standing in front of her. The woman standing is holding a makeup brush and talking to the woman sitting. The woman sitting is wearing a white dress, and the woman standing is wearing a black dress. The background is a city street with buildings and trees. The text \"L"
+        },
+        {
+          "frame_idx": 6,
+          "frame_number": 7,
+          "labels": [
+            "safe"
+          ],
+          "summary": "The video shows two women standing on a bridge. One woman is wearing a white dress and the other is wearing a black dress. The woman in the black dress is holding a makeup brush and talking to the woman in the white dress. The woman in the white dress is sitting on a chair. The background is a city street with buildings and trees.",
+          "response": "<label><safe></label><summary>The video shows two women standing on a bridge. One woman is wearing a white dress and the other is wearing a black dress. The woman in the black dress is holding a makeup brush and talking to the woman in the white dress. The woman in the white dress is sitting on a chair. The background is a city street with buildings and trees.</summary>\n"
+        }
+      ],
+      "clip_summary": "The video shows two women standing on a bridge. One woman is wearing a white dress and the other is wearing a black dress. The woman in the black dress is holding a makeup brush and talking to the woman in the white dress. The woman in the white dress is sitting on a chair. The background is a city street with buildings and trees."
+    },
+    {
+      "clip_idx": 5,
+      "frames": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "frame_results": [
+        {
+          "frame_idx": 7,
+          "frame_number": 8,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe><continue></label>\n"
+        },
+        {
+          "frame_idx": 8,
+          "frame_number": 9,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe></label><summary>A woman is getting her makeup done by another woman. The woman getting her makeup done is wearing a black top and has her hair in a ponytail. The woman doing the makeup is wearing a black top and has her hair in a ponytail. The woman doing the makeup is using a brush to apply makeup to the woman's face. The woman getting her makeup done is"
+        },
+        {
+          "frame_idx": 9,
+          "frame_number": 10,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe></label><summary>The video shows a woman getting her makeup done by another woman. The woman getting her makeup done is wearing a black top and has her hair in a ponytail. The woman doing the makeup is wearing a black top and has her hair in a ponytail. The woman doing the makeup is using a brush to apply makeup to the woman's face. The woman getting her makeup"
+        },
+        {
+          "frame_idx": 10,
+          "frame_number": 11,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe></label><summary>The video shows a woman getting her makeup done by another woman. The woman getting her makeup done is wearing a black top and has her hair in a ponytail. The woman doing the makeup is wearing a black top and has her hair in a ponytail. The woman doing the makeup is using a brush to apply makeup to the woman's face. The woman getting her makeup"
+        },
+        {
+          "frame_idx": 11,
+          "frame_number": 12,
+          "labels": [
+            "safe"
+          ],
+          "summary": null,
+          "response": "<label><safe></label><summary>The video shows a woman getting her makeup done by another woman. The woman getting her makeup done is wearing a black top and has her hair in a ponytail. The woman doing the makeup is wearing a black top and has her hair in a ponytail. The woman doing the makeup is using a brush to apply makeup to the woman's face. The woman getting her makeup"
+        }
+      ],
+      "clip_summary": "No summary generated"
+    }
+  ],
+  "final_response": "_summary><summary>The video shows a woman getting her makeup done by another woman. The woman getting her makeup done is wearing a black top and has her hair in a ponytail. The woman doing the makeup is wearing a black top and has her hair in a ponytail. The woman doing the makeup is using a brush to apply makeup to the woman's face. The woman getting her makeup done is looking at the camera.</summary>\n<response>The video begins with a woman holding a black mascara tube with a brush on the end, wearing black nail polish and a ring on her finger. She then transitions to a scene where she is applying makeup to another woman with her hair tied up, who is also dressed in black. The scene shifts to an outdoor setting on a city street, where the woman in black is now talking to the woman in white, who is sitting on a chair. The woman in black is holding a makeup brush and appears to be giving makeup tips. The video then moves to a bridge, where the same two women are standing. The woman in black continues to talk to the woman in white, who is still sitting on the chair. The video then focuses on the woman in black applying makeup to the woman in white, who is now wearing a black top and has her hair in a ponytail. The woman in black, also in a black top and ponytail, uses a brush to apply makeup to the woman's face. The video concludes with the woman in black finishing the",
+  "timestamp": "2025-09-09T13:34:10.134461"
+}

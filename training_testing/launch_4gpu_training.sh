@@ -1,28 +1,28 @@
 #!/bin/bash
-# 四卡训练启动脚本
-# Batch size=2, Max length=8192
+# 双卡训练启动脚本
+# Batch size=1, Max length=8192
 
-echo "🚀 启动4卡训练..."
+echo "🚀 启动2卡训练..."
 echo "配置:"
-echo "  - GPUs: 4"
+echo "  - GPUs: 2"
 echo "  - Batch size per GPU: 1"
 echo "  - Max sequence length: 8192"
-echo "  - Gradient accumulation: 4 (effective batch size = 4*1*4 = 16)"
+echo "  - Gradient accumulation: 4 (effective batch size = 2*1*4 = 8)"
 echo "  - LoRA rank: 32"
 echo ""
 
 # 设置环境变量
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES=0,1
 export OMP_NUM_THREADS=8
 
 # 创建输出目录
-OUTPUT_DIR="./output_4gpu_bs2_8k"
+OUTPUT_DIR="./output_2gpu_test"
 mkdir -p $OUTPUT_DIR
 
 # 启动分布式训练
 # torchrun是PyTorch的分布式启动工具
 torchrun \
-    --nproc_per_node=4 \
+    --nproc_per_node=2 \
     --master_port=29500 \
     custom_lora_trainer.py \
     --output_dir $OUTPUT_DIR \

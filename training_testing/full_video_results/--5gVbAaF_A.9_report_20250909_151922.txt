@@ -1,0 +1,56 @@
+================================================================================
+VIDEO STREAMING ANALYSIS REPORT
+================================================================================
+
+Video: /scratch/czr/Video-Guard/datasets/shot2story-videos/release_134k_videos/--5gVbAaF_A.9.mp4
+Checkpoint: /scratch/czr/Video-Guard/training_testing/output_8gpu_full/checkpoint-3500
+Timestamp: 2025-09-09T15:19:22.367653
+
+Analysis Details:
+  • Frames processed: 12/12
+  • Clips identified: 6
+  • Clips before merge: 6
+  • FPS sample rate: 30
+
+Safety Analysis:
+  • Safe frames: 12
+  • Unsafe frames: 0
+
+Clip Breakdown:
+
+  Clip 1:
+    • Frames: 2
+    • Summary: A woman is holding a mascara tube in her hand. The mascara tube is black and has a brush on the end....
+    • Labels: safe(2)
+
+  Clip 2:
+    • Frames: 1
+    • Summary: A woman in black clothes and glasses is applying makeup to a woman in black clothes with her hair ti...
+    • Labels: safe(2)
+
+  Clip 4:
+    • Frames: 2
+    • Summary: There are two women in the video. One is sitting on a chair, and the other is standing in front of h...
+    • Labels: safe(2)
+
+  Clip 5:
+    • Frames: 2
+    • Summary: The video shows a woman in a white dress sitting on a chair, and a woman in black clothes standing i...
+    • Labels: safe(2)
+
+  Clip 6:
+    • Frames: 2
+    • Summary: The video shows a close-up of a person holding a black pen in one hand and a black object in the oth...
+    • Labels: safe(2)
+
+  Clip 7:
+    • Frames: 2
+    • Summary: A woman in a gray vest is sitting on a balcony, applying lipstick to her lips. Another woman in a bl...
+    • Labels: safe(2)
+
+Final Video Summary:
+  The video begins with a woman holding a black mascara tube with a brush on the end, wearing black nail polish and a ring on her finger. She is then seen applying makeup to another woman with her hair tied up, both wearing black clothes and glasses. The scene transitions to a city street with buildings and trees in the background, where a woman in a white dress is sitting on a chair, and another woman in a black dress is standing in front of her, holding a makeup brush and talking. The text "LASH...
+
+  (Length: 996 chars)
+
+================================================================================

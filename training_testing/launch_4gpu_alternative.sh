@@ -6,7 +6,7 @@ echo "🚀 启动4卡训练 (备选方案)..."
 echo "配置:"
 echo "  - GPUs: 4"
 echo "  - Batch size per GPU: 2"  
-echo "  - Max sequence length: 8192"
+echo "  - Max sequence length: 16384"
 echo "  - Gradient accumulation: 2"
 echo ""
 
@@ -14,11 +14,11 @@ echo ""
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 # 创建输出目录
-OUTPUT_DIR="./output_4gpu_bs2_8k"
+OUTPUT_DIR="./output_4gpu_bs2_16k"
 mkdir -p $OUTPUT_DIR
 
-# 使用python -m torch.distributed.launch启动
-python -m torch.distributed.launch \
+# 使用torchrun启动 (新版本推荐)
+torchrun \
     --nproc_per_node=4 \
     --master_port=29500 \
     custom_lora_trainer.py \
@@ -41,8 +41,8 @@ python -m torch.distributed.launch \
     --lora_r 32 \
     --lora_alpha 64 \
     --lora_dropout 0.1 \
-    --max_samples 20000 20000 \
-    --max_length 8192 \
+    --max_samples 5000 20000 \
+    --max_length 16384 \
     --trust_remote_code True \
     2>&1 | tee $OUTPUT_DIR/training.log
 
